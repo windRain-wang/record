@@ -1,21 +1,7 @@
 <script setup lang="ts">
-import {
-  throttleFilter,
-  useLocalStorage,
-  useMouse,
-  usePreferredDark,
-} from "@vueuse/core";
-const { x, y } = useMouse();
-const isDark = usePreferredDark();
-console.log(isDark.value);
-isDark.value = true;
-console.log(isDark.value);
+  import {useMouse} from '@vueuse/core'
 
-const store = useLocalStorage(
-  "my-storange",
-  { name: "Apple", color: "red" },
-  { eventFilter: throttleFilter(1000) }
-);
+  const {x, y} = useMouse()
 </script>
 
 <template>
